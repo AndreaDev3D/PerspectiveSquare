@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Perspective to Square — AndreaDev3D</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>Perspective → Square</h1>
+    <div class="controls">
+      <label>
+        <strong>Upload</strong>
+        <input id="file" type="file" accept="image/*" />
+      </label>
+      <label title="Output size (pixels)">
+        <strong>Output size</strong>
+        <input id="outSize" type="range" min="256" max="1200" step="16" value="640" />
+        <span id="outSizeVal">640×640</span>
+      </label>
+      <label>
+        <input id="maintainAspect" type="checkbox" checked />
+        <span>Maintain aspect ratio</span>
+      </label>
+      <button id="resetBtn" class="btn" title="Reset the 4 dots to image corners">Reset corners</button>
+      <button id="flipBtn" class="btn" title="Swap clockwise/counter-clockwise order">Flip order</button>
+      <label>
+        <input id="liveRender" type="checkbox" checked />
+        <span>Render while dragging</span>
+      </label>
+      <span class="note"><span class="legend-dot"></span>Drag the 4 dots on the left. Right side shows the corrected
+        square.</span>
+    </div>
+  </header>
+
+  <main class="grid">
+    <section class="pane" id="leftPane">
+      <canvas id="srcCanvas"></canvas>
+      <div class="hud" id="hudL">No image loaded</div>
+    </section>
+    <section class="pane" id="rightPane">
+      <canvas id="dstCanvas" width="640" height="640"></canvas>
+      <div class="hud" id="hudR">Output: 640×640</div>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
